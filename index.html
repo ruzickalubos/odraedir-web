@@ -1,1 +1,2750 @@
-<p>test</p>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ODRAEDIR | Official Website</title>
+    <link href="Pictures/minis/browser%20tab.jpg" rel="icon" type="image/jpeg"/>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+    
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap"></noscript>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+    <link rel="preload" as="image" href="Pictures/odraedir-logo.webp">
+    <link rel="preload" as="image" href="Pictures/bcg_poster.jpg">
+    
+    <style>
+        /* ============ HLAVNÍ OPRAVA ROLOVÁNÍ (CSS) ============ */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        /* ============ BASE STYLES ============ */
+        :root {
+            --primary-color: #111;
+            --secondary-color: #700;
+            --accent-color: #c00;
+            --text-color: #ddd;
+            --heading-font: 'Uncial Antiqua', cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+		
+		header::after,
+		#Discography::after,
+		#music::after,
+		#Shows::after,
+		#Biography::after,
+		#contact::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100px;
+			background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+			z-index: 1;
+			pointer-events: none;
+		}
+
+        /* ============ LAYOUT STYLES ============ */
+        section {
+            min-height: 100vh;
+            padding: 40px 5% 80px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-content {
+            padding: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            color: #fff;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .section-title:hover {
+            transform: scale(1.07);
+            color: var(--accent-color);
+            text-shadow: 0 0 8px rgba(204, 0, 0, 0.5);
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* ============ HEADER STYLES ============ */
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 5% 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .logo, .tagline, .cta-button {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-family: var(--heading-font);
+			font-size: clamp(1.8rem, 4vw, 3rem);
+			letter-spacing: 1px;
+			color: #fff;
+			text-transform: uppercase;
+			text-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color);
+			margin-bottom: 20px;
+			transition: all 0.3s ease;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+        }
+
+        .logo-image {
+            max-width: 100%;
+			height: auto;
+			max-height: 500px;
+			transition: transform 0.3s ease;
+			display: block;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .tagline {
+            font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #000;
+            transition: transform 0.2s ease;
+            max-width: 90%;
+        }
+
+        .tagline:hover {
+            transform: scale(1.1);
+        }
+
+        .cta-button {
+            max-width: 100%;
+            box-sizing: border-box;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #f00;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        /* ============ NAVIGATION ============ */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            top: 0;
+			left: 0;
+			right: 0;
+            transition: all 0.4s ease;
+            min-height: 60px;
+        }
+		
+		nav.nav-hidden {
+            transform: translateY(-100%);
+        }
+
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+			max-width: 2000px;
+			margin: 0 auto;
+        }
+
+        .nav-logo {
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        .nav-logo:active {
+            color: #fff;
+            text-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+            padding: 5px 0;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-social {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .nav-social-icon {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-social-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* ============ DISCOGRAPHY SECTION ============ */
+        #Discography {
+            background-image: url('Pictures/apocalyptic sky (1).webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            position: relative;
+        }
+
+        #Discography::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.1));
+            z-index: 0;
+        }
+
+        .Discography-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: clamp(15px, 3vw, 40px);
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 1200px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .album {
+            width: 100%;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+        }
+
+        .album:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .album-cover {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            transition: opacity 0.3s;
+        }
+
+        .album-cover:hover {
+            opacity: 0.8;
+        }
+
+        .album-title {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .album-year {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .album-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .album-links a {
+            padding: 8px 15px;
+            background-color: #222;
+            color: #ddd;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+
+        .album-links a:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+		.album-info {
+			flex-grow: 1;
+			margin-bottom: auto;
+		}
+
+        /* ============ MUSIC SECTION ============ */
+        #music {
+            background-image: url('Pictures/Odraedir_vengeance_no_logo.webp');
+            background-size: cover;
+            background-position: center 20%;
+            position: relative;
+        }
+
+        #music::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.1));
+            z-index: 0;
+        }
+
+        .video-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .Discography-player-container {
+            width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+			text-align: center;
+			order: 1;
+			position: relative;
+			z-index: 2;
+			background: transparent !important;
+			padding: 0 !important;
+			overflow: hidden;
+			transition: all 0.3s ease;
+			display: flex;
+			flex-direction: column;
+			background-color: rgba(20, 20, 20, 0.8);
+        }
+
+        .Discography-player-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .spotify-text {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .Discography-player-iframe {
+            width: 100%;
+            max-height: 80vh;
+            position: relative;
+            z-index: 3;
+            pointer-events: auto !important;
+            display: block;
+            margin: 0 auto;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            transition: all 0.3s ease;
+			flex-grow: 1;
+        }
+
+        .Discography-player-iframe:hover {
+            box-shadow: 0 0 15px rgba(204, 0, 0, 0.7);
+        }
+
+        .videos-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            order: 2;
+        }
+
+        .video-container {
+            width: 100%;
+            margin-bottom: 0;
+            transition: all 0.3s ease;
+        }
+
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .video-container:hover .video-title {
+            color: var(--accent-color);
+        }
+
+        .video-frame {
+            width: 100%;
+            padding-bottom: 56.25%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .video-frame:hover {
+            box-shadow: 0 0 15px rgba(204, 0, 0, 0.7);
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ============ SHOWS SECTION ============ */
+        #Shows {
+            background-image: url('Pictures/Odraedir_vengeance_no_logo.webp');
+            background-size: cover;
+            background-position: center 100%;
+            background-attachment: scroll;
+            position: relative;
+        }
+
+        #Shows::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.3));
+            z-index: 0;
+        }
+
+        .Shows-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .Shows-date {
+            display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			transition: all 0.3s ease;
+			background-color: rgba(20, 20, 20, 0.8);
+			padding: 20px;
+			border-radius: 8px;
+			margin-bottom: 20px;
+			border: 1px solid #333;
+			position: relative;
+			z-index: 1;
+		}
+
+        .Shows-date:hover {
+            background-color: rgba(70, 0, 0, 0.5);
+			transform: translateY(-5px);
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+		}
+
+        .date {
+            font-weight: bold;
+            min-width: 120px;
+            margin-bottom: 5px;
+        }
+
+        .venue {
+            flex: 1;
+            padding: 0 20px;
+            min-width: 150px;
+        }
+
+        .city {
+            color: #888;
+            font-size: 0.9rem;
+            width: 100%;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .fb-event-btn {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 8px 20px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .fb-event-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* ============ GALLERY SECTION ============ */
+        #gallery {
+            background-image: url('Pictures/chaos and destruction on land (1).webp');
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: scroll;
+            position: relative;
+        }
+
+        #gallery::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.1));
+            z-index: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* ============ BIOGRAPHY SECTION ============ */
+		#Biography {
+			background-image: url('Pictures/chaos and destruction on land (1).webp');
+			background-size: cover;
+			background-position: center 20%;
+			background-attachment: scroll;
+			position: relative;
+		}
+
+		#Biography::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.1));
+			z-index: 0;
+		}
+
+		.Biography-container {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: clamp(20px, 5vw, 50px);
+			align-items: center;
+			position: relative;
+			z-index: 1;
+		}
+
+		.Biography-image {
+			width: 100%;
+			height: auto;
+			border: 5px solid #222;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			transition: transform 0.3s ease;
+		}
+
+		.Biography-image:hover {
+			transform: scale(1.05);
+		}
+
+		.Biography-text {
+		}
+
+		.Biography-text p {
+			margin-bottom: 20px;
+			font-size: 1.1rem;
+			transition: transform 0.3s ease, font-size 0.3s ease;
+			background-color: rgba(0, 0, 0, 0.6);
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.members {
+			margin-top: 30px;
+		}
+
+		.member {
+			margin-bottom: 10px;
+			transition: transform 0.3s ease;
+			background-color: rgba(0, 0, 0, 0.4);
+			padding: 8px 15px;
+			border-radius: 4px;
+		}
+
+		.member:hover {
+			transform: scale(1.05);
+		}
+
+		.member-name {
+			font-weight: bold;
+			color: #fff;
+		}
+
+		.member-instrument {
+			color: #fff;
+			font-style: italic;
+		}
+
+		/* Media query pro šířky nad 1300px */
+		@media (min-width: 1300px) {
+			.Biography-container {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+
+        /* ============ DOWNLOADS SECTION ============ */
+        #Downloads {
+            background-image: url('Pictures/moun2.webp');
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: scroll;
+            position: relative;
+        }
+
+        #Downloads::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.1));
+            z-index: 0;
+        }
+
+        .downloads-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-item {
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+			cursor: pointer;
+        }
+
+		.download-item-link {
+			text-decoration: none;
+			color: inherit;
+			display: block;
+		}
+
+        .download-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .thumbnail-container {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-thumbnail {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-thumbnail {
+            height: 100%;
+            width: auto;
+            max-width: none;
+        }
+
+        .download-thumbnail:hover {
+            opacity: 0.8;
+        }
+
+        .download-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .download-description {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .download-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .download-btn:hover {
+            background-color: #f00;
+            box-shadow: 0 0 10px var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        /* ============ CONTACT SECTION ============ */
+        #contact {
+            background-image: url('Pictures/moun2.webp');
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: scroll;
+            position: relative;
+        }
+
+        #contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.1));
+            z-index: 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(20px, 5vw, 50px);
+            position: relative;
+            padding: clamp(20px, 5vw, 50px);
+            z-index: 1;
+        }
+        
+        .legal-info {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .legal-info ul {
+            display: inline-block;
+            text-align: left;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info p:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+		
+		.contact-image {
+			max-width: 90%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+			border: 5px solid #222;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+			transition: transform 0.3s ease;
+		}
+
+		.contact-image:hover {
+			 transform: scale(1.10);
+		}
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        /* ============ MERCHANDISE SECTION ============ */
+        #merchandise {
+            background-image: url('Pictures/music bcg.jpg');
+            background-size: cover;
+            background-position: center 100%;
+            background-attachment: scroll;
+            position: relative;
+        }
+
+        #merchandise::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.3));
+            z-index: 0;
+        }
+
+        .merch-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            grid-auto-rows: 1fr;
+			max-width: 1200px;
+			margin: 0 auto;
+        }
+
+        .merch-item {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.4);
+			cursor: pointer;
+            height: auto;
+            min-height: auto;
+        }
+
+        .merch-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .merch-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5% 0;
+            overflow: hidden;
+        }
+
+        .merch-image {
+            width: 90%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 3px;
+            transition: transform 0.3s ease;
+        }
+
+        .merch-item:hover .merch-image {
+            transform: scale(1.1);
+        }
+
+        .merch-title {
+            margin: 8px 0;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .merch-price {
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: auto;
+        }
+
+        .purchase-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .purchase-btn:hover {
+            background-color: #f00;
+            box-shadow: 0 0 10px var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        /* Consistent button styling */
+        .bandcamp-btn, .purchase-btn, .download-btn {
+            background-color: var(--accent-color) !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border: none !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            transition: all 0.3s ease !important;
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
+            margin-top: auto !important;
+        }
+
+        .bandcamp-btn:hover, .purchase-btn:hover, .download-btn:hover {
+            background-color: #f00 !important;
+            box-shadow: 0 0 10px var(--accent-color) !important;
+            transform: scale(1.05) !important;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background-color: #000;
+            padding: 40px 5%;
+            text-align: center;
+            min-height: auto;
+        }
+		
+		.footer-logo {
+			font-family: var(--heading-font);
+			font-size: 3rem;
+			color: #fff;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 0 !important;
+			transition: transform 0.3s ease;
+		}
+
+        /* Kontejner pro logo a dekorace */
+		.footer-logo-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 0px;
+			cursor: pointer;
+		}
+
+		/* Styly pro dekorativní obrázky */
+		.footer-decoration-left,
+		.footer-decoration-right {
+			height: 100px;
+			width: auto;
+			filter: invert(100%);
+			margin: 0 50px;
+			transition: transform 0.3s ease;
+		}
+
+		/* Úprava stávajícího stylu pro text loga */
+		.footer-logo {
+			margin-bottom: 0 !important;
+			transition: transform 0.3s ease;
+		}
+
+		/* Efekt zvětšení při najetí myší na kontejner */
+		.footer-logo-container:hover .footer-decoration-left,
+		.footer-logo-container:hover .footer-decoration-right,
+		.footer-logo-container:hover .footer-logo {
+			transform: scale(1.15);
+		}
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links li {
+            margin: 0 15px;
+        }
+		
+		.footer-links a:hover {
+			transform: scale(1.1);
+		}
+
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ============ BACK TO TOP BUTTON ============ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: #f00;
+            transform: translateY(-5px);
+        }
+
+        /* ============ LIGHTBOX STYLES ============ */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+			justify-content: center; 
+			align-items: center;  
+        }
+
+        .lightbox-content {
+            display: flex;
+			flex-direction: column;
+			align-items: center;
+            max-width: 95%;
+            max-height: 80%;
+            position: relative;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+		#lightbox-img {
+			display: block;
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+			width: auto;
+			height: auto;
+			flex-grow: 1;
+			flex-shrink: 1;
+			flex-basis: auto;
+			min-height: 0;
+		}
+
+        #lightbox-caption {
+            margin: 0 auto 10px auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #f1f1f1;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-lightbox:hover,
+        .close-lightbox:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 16px;
+            cursor: pointer;
+            z-index: 1001;
+            user-select: none;
+            transition: 0.3s;
+        }
+
+        .lightbox-arrow:hover,
+        .lightbox-arrow:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .prev-arrow {
+            left: 35px;
+        }
+
+        .next-arrow {
+            right: 35px;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .line2 {
+            opacity: 0;
+        }
+
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* ============ ACCESSIBILITY ============ */
+        button:focus,
+        a:focus,
+        input:focus,
+        textarea:focus {
+            outline: none;
+        }
+
+		.merch-item-link:focus {
+			outline: none;
+		}
+
+        /* Ensure proper touch target sizes on mobile */
+        .nav-links a,
+        .social-icon,
+        .album-links a,
+        .fb-event-btn,
+        button {
+            min-height: 44px;
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ============ RESPONSIVE MEDIA QUERIES ============ */
+
+        /* Extra large devices (1600px and up) */
+        @media (min-width: 1600px) {
+            .video-wrapper {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            .Discography-player-container {
+                width: 50%;
+                max-width: 800px;
+                order: 1;
+            }
+
+            .videos-container {
+                width: 45%;
+                order: 2;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .video-container {
+                width: 100%;
+            }
+
+            .Discography-player-iframe {
+                height: 450px;
+            }
+
+            .video-frame iframe {
+                min-height: 320px;
+            }
+
+            .video-wrapper {
+                max-width: 1800px;
+                margin: 0 auto;
+            }
+			
+			.Biography-container {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.Biography-image {
+				order: initial;
+			}
+
+			.Biography-text {
+				order: initial;
+			}
+        }
+		
+        /* Large desktop (1300px and up) */
+        @media (min-width: 1300px) {
+            .video-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1.2fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 20px;
+                align-items: flex-start;
+				max-width: 1600px;
+				margin: 0 auto;
+            }
+
+            .Discography-player-container {
+                grid-column: 2;
+                grid-row: 1 / span 2;
+                width: 100%;
+                max-width: none;
+                order: 0;
+				align-self: center;
+				min-height: 500px;
+            }
+
+            .videos-container {
+                display: contents;
+            }
+
+            .video-container {
+                width: 100%;
+                margin-bottom: 0;
+            }
+
+			/* Assigning videos to grid positions */
+            .video-container:nth-of-type(1) { grid-area: 1 / 1 / 2 / 2; }
+            .video-container:nth-of-type(2) { grid-area: 2 / 1 / 3 / 2; }
+            .video-container:nth-of-type(3) { grid-area: 1 / 3 / 2 / 4; }
+            .video-container:nth-of-type(4) { grid-area: 2 / 3 / 3 / 4; }
+
+
+            .Discography-player-iframe {
+                height: 420px;
+            }
+
+            .video-frame iframe {
+                min-height: 270px;
+            }
+
+			.logo-image {
+				max-width: 80%;
+				max-height: 500px;
+			}
+			
+			.Biography-container {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.Biography-image {
+				order: initial;
+			}
+
+			.Biography-text {
+				order: initial;
+			}
+
+            .contact-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Desktop & Tablets (814px - 1299px) */
+        @media (min-width: 814px) and (max-width: 1299px) {
+            .Discography-player-container {
+                max-width: 1100px;
+				margin-bottom: 0; /* ZMĚNA: Odstraněna mezera pod přehrávačem */
+            }
+
+            .videos-container {
+                display: flex;
+                flex-wrap: wrap; 
+                flex-direction: row;
+                justify-content: center; 
+                gap: 20px;
+            }
+
+            .video-container {
+                width: calc(50% - 10px); 
+            }
+
+            .Discography-player-iframe {
+                height: 350px;
+            }
+
+            .downloads-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .contact-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .merch-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+			.logo-image {
+				max-width: 85%;
+				max-height: 450px;
+			}
+			
+            /* ZMĚNA: Biografie zůstává v jednom sloupci (inherited), dvousloupcové rozložení odstraněno */
+        }
+        
+        /* Mobile-specific optimizations */
+        @media (max-width: 999px) {
+            header {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Pictures/front bez loga.webp');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+            }
+
+            .video-background {
+                display: none;
+			}
+        }
+
+        /* Mobile devices (up to 813px) */
+        @media (max-width: 813px) {
+            /* Navigation */
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                height: calc(100vh - 60px);
+                top: 60px;
+                background-color: rgba(0, 0, 0, 0.95);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                width: 70%;
+                transition: right 0.5s ease-in-out;
+                z-index: 1000;
+                padding: 30px 0;
+                overflow-y: auto;
+            }
+
+            .nav-active {
+                right: 0;
+            }
+
+            .burger {
+                display: block;
+            }
+
+			.Discography-player-container {
+				width: 100% !important;
+                max-width: 100% !important;
+                min-width: unset !important;
+			}
+
+            .video-wrapper {
+                flex-direction: column;
+            }
+
+            .videos-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .video-container {
+                width: 100% !important;
+            }
+
+            .Discography-player-iframe {
+                height: 300px;
+            }
+
+            .video-title {
+                font-size: 1.2rem;
+            }
+
+            .downloads-container {
+                grid-template-columns: 1fr;
+            }
+
+            .merch-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .Biography-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            /* Section title adjustments */
+            .section-title {
+                font-size: 2rem;
+            }
+
+            /* Footer adjustments */
+            .footer-links {
+                flex-wrap: wrap;
+            }
+
+            .footer-links li {
+                margin: 5px 10px;
+            }
+
+            /* Shows section adjustments */
+            .Shows-date {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .venue, .city, .date {
+				width: 100%;
+				padding: 0;
+			}
+
+            .fb-event-btn {
+                align-self: flex-end;
+                margin-top: 10px;
+            }
+			
+			.city {
+				width: auto;
+				text-align: left;
+				margin-top: 0;
+				padding-left: 20px;
+				flex-grow: 1;
+			}
+
+			.venue {
+				flex: 1;
+				 padding: 0 20px;
+			}
+			
+			.contact-container {
+				grid-template-columns: 1fr;
+				gap: 30px;
+				justify-items: center;
+				text-align: center;
+			}
+
+			.contact-info {
+				 text-align: center;
+			}
+
+			.social-links {
+				justify-content: center;
+			}
+
+			.contact-image {
+				 margin: 0 auto;
+			}
+			
+			.footer-decoration-left,
+			.footer-decoration-right {
+				display: none;
+			}
+			
+			.logo-image {
+				max-width: 80%;
+				max-height: 400px;
+			}
+		}
+
+        /* Small mobile devices (up to 480px) */
+        @media (max-width: 480px) {
+            .nav-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            .nav-logo {
+                order: 1;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .burger {
+                order: 2;
+                margin: 0 15px;
+            }
+
+            .nav-social {
+                order: 3;
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Header adjustments */
+            .logo {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .tagline {
+                font-size: clamp(0.9rem, 4vw, 1rem);
+            }
+
+            .cta-button {
+                padding: 10px 15px;
+                font-size: 1rem;
+                width: 80%;
+            }
+
+            /* Section adjustments */
+            section {
+                padding: 40px 4%;
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 3vw, 2.5rem);
+                margin-bottom: clamp(30px, 5vw, 50px);
+            }
+
+            /* Gallery adjustments */
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            /* Discography player adjustments */
+            .Discography-player-iframe {
+                height: 250px;
+            }
+
+            .spotify-text {
+                font-size: 1rem;
+            }
+
+            /* Merchandise adjustments */
+            .merch-container {
+                grid-template-columns: 1fr;
+            }
+
+            /* Contact section adjustments */
+            .contact-info p {
+                font-size: 1rem;
+            }
+
+            .social-links {
+                gap: 10px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .social-icon {
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+
+            /* Back to top button adjustments */
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+			
+			.footer-logo-container:hover .footer-decoration-left,
+			.footer-logo-container:hover .footer-decoration-right,
+			.footer-logo-container:hover .footer-logo {
+				transform: scale(1.1);
+			}
+			
+			@media (min-width: 320px) and (max-width: 480px) {
+			.footer-logo {
+				font-size: clamp(2rem, 8vw, 3rem);
+			}
+		}
+
+        /* Ultra-small devices (up to 320px) */
+        @media (max-width: 320px) {
+            .nav-container {
+                padding: 10px 3%;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .album-title {
+                font-size: 1.2rem;
+            }
+
+            .footer-logo {
+                font-size: 1.5rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 90vw;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .footer-links li {
+                margin: 0 !important;
+            }
+        }
+
+        /* Ultra-narrow screens (under 213px) */
+        @media (max-width: 213px) {
+            #music, #gallery, #Biography, #Downloads, #contact, #Shows,
+            #merchandise, #Discography, header, section[id] {
+                background-size: 100vw 100%;
+                width: 100vw;
+                max-width: 100vw;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            body, html {
+                overflow-x: hidden;
+                width: 100vw;
+                max-width: 100vw;
+                padding: 0;
+                margin: 0;
+            }
+
+            section[id]::before {
+                width: 100vw !important;
+                left: 0 !important;
+            }
+
+            .section-content {
+                padding-left: 3px;
+                padding-right: 3px;
+                width: 100%;
+            }
+
+            .Discography-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 5px;
+            }
+
+            .album {
+                max-width: 100%;
+                width: 100%;
+                padding: 10px;
+                margin: 0 auto 15px;
+            }
+
+            .album-title {
+                word-break: break-word;
+            }
+
+            .album-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .album-links a {
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+<div class="nav-container">
+<a class="nav-logo" href="#home" id="logo-top">ODRAEDIR</a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#Discography">Discography</a></li>
+<li><a href="#music">Music</a></li>
+<li><a href="#merchandise">Merchandise</a></li>
+<li><a href="#Shows">Shows</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#Biography">Biography</a></li>
+<li><a href="#Downloads">Downloads</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="nav-social">
+<a aria-label="Facebook" class="nav-social-icon" href="https://www.facebook.com/odraedir" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" class="nav-social-icon" href="https://www.instagram.com/odraedirofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a aria-label="YouTube" class="nav-social-icon" href="https://www.youtube.com/@odraedir" target="_blank"><i class="fab fa-youtube"></i></a>
+<a aria-label="Spotify" class="nav-social-icon" href="https://open.spotify.com/artist/5XY2vRKKwuolqtIDSvU3FU" target="_blank"><i class="fab fa-spotify"></i></a>
+<a aria-label="Bandcamp" class="nav-social-icon" href="https://odraedir.bandcamp.com/music" target="_blank"><i class="fab fa-bandcamp"></i></a>
+</div>
+<div aria-label="Toggle navigation" class="burger" role="button">
+<div class="line1"></div>
+<div class="line2"></div>
+<div class="line3"></div>
+</div>
+</div>
+</nav>
+<header id="home">
+    <div class="logo">
+        <img alt="Logo kapely ODRAEDIR" class="logo-image" fetchpriority="high" loading="eager" src="Pictures/odraedir-logo.webp"/>
+    </div>
+    <video autoplay class="video-background" data-src="Pictures/bcg.mp4" loop muted playsinline poster="Pictures/bcg_poster.jpg">
+    </video>
+    <p class="tagline">PAGAN / FOLK METAL</p>
+    <p class="tagline">BASED IN PRAGUE</p>
+    <p class="tagline">EST. 2009</p>
+    <a href="https://odraedir.bandcamp.com/music" target="_blank"><button class="cta-button">bandcamp</button></a>
+</header>
+<section id="Discography">
+<h2 class="section-title">Discography</h2>
+<div class="Discography-container">
+<div class="album">
+<img alt="Obal alba ODRAEDIR - Abyss (2025)" class="album-cover" src="Pictures/minis/front Abyss final.webp"/>
+<div class="album-info">
+<h3 class="album-title">Abyss</h3>
+<p class="album-year">2025</p>
+</div>
+<div class="album-links">
+<a href="https://open.spotify.com/album/2Fv4N0grZ2ySEddcqHeJum" target="_blank">Spotify</a>
+<a href="https://music.apple.com/cv/album/abyss-ep/1847599161" target="_blank">Apple Music</a>
+<a href="https://odraedir.bandcamp.com/album/abyss-ep-2025" target="_blank">Buy</a>
+</div>
+</div>
+<div class="album">
+<img alt="Obal alba ODRAEDIR - Vengeance (2023)" class="album-cover" src="Pictures/minis/Vengeance front.webp"/>
+<div class="album-info">
+<h3 class="album-title">Vengeance</h3>
+<p class="album-year">2023</p>
+</div>
+<div class="album-links">
+<a href="https://open.spotify.com/album/0JXYsMjnUwSCMV3mEOyfNJ" target="_blank">Spotify</a>
+<a href="https://music.apple.com/cv/album/vengeance/1713445335" target="_blank">Apple Music</a>
+<a href="https://odraedir.bandcamp.com/album/vengeance-full-length-2023" target="_blank">Buy</a>
+</div>
+</div>
+<div class="album">
+<img alt="Obal alba ODRAEDIR - Legends Of The Dark Times (2017)" class="album-cover" src="Pictures/legends%20front.jpg"/>
+<div class="album-info">
+<h3 class="album-title">Legends Of The Dark Times</h3>
+<p class="album-year">2017</p>
+</div>
+<div class="album-links">
+<a href="https://open.spotify.com/album/0YR0SPSJ883t0oh75s7gww" target="_blank">Spotify</a>
+<a href="https://music.apple.com/cv/album/legends-of-the-dark-times/1629329816" target="_blank">Apple Music</a>
+<a href="https://odraedir.bandcamp.com/album/legends-of-the-dark-times-full-length-2017" target="_blank">Buy</a>
+</div>
+</div>
+<div class="album">
+<img alt="Obal EP ODRAEDIR - Trolls Cave (2012)" class="album-cover" src="Pictures/trolls%20cave.jpg"/>
+<div class="album-info">
+<h3 class="album-title">Trolls Cave</h3>
+<p class="album-year">2012</p>
+</div>
+<div class="album-links">
+<a href="https://odraedir.bandcamp.com/album/trolls-cave-ep-2012" target="_blank">Buy</a>
+</div>
+</div>
+</div>
+</section>
+<section id="music">
+<h2 class="section-title">Music</h2>
+<div class="video-wrapper">
+<div class="Discography-player-container">
+<span class="spotify-text">Stream our Discography:</span>
+<iframe allow="encrypted-media" allowtransparency="true" class="Discography-player-iframe" frameborder="0" src="https://open.spotify.com/embed/artist/5XY2vRKKwuolqtIDSvU3FU" title="Spotify přehrávač diskografie ODRAEDIR"></iframe>
+</div>
+<div class="videos-container">
+    <div class="video-container">
+        <h3 class="video-title">Abyss lyrics video</h3>
+        <div class="video-frame">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/4EIrpXOuDns" 
+                title="Abyss lyrics video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <div class="video-container">
+        <h3 class="video-title">Sip of Courage</h3>
+        <div class="video-frame">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/xbViiNtD3c8" 
+                title="Sip of Courage" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <div class="video-container">
+        <h3 class="video-title">Cult lyrics video</h3>
+        <div class="video-frame">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/AVbZU9UsicQ" 
+                title="Cult lyrics video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <div class="video-container">
+        <h3 class="video-title">Vengeance album stream</h3>
+        <div class="video-frame">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/q64GJ6r-b9k" 
+                title="Vengeance album stream" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<section id="merchandise">
+<h2 class="section-title">Merchandise</h2>
+<div class="merch-container">
+<a class="merch-item-link" href="https://odraedir.bandcamp.com/merch/vengeance-t-shirt" target="_blank">
+<div class="merch-item">
+<div class="merch-content">
+<div class="image-container">
+<img alt="Černé tričko ODRAEDIR s motivem alba Vengeance" class="merch-image" src="Pictures/Vengeance%20tshirt.jpg"/>
+</div>
+<h3 class="merch-title">Vengeance T-shirt</h3>
+<p class="merch-price">€20 EUR</p>
+</div>
+<div class="button-container">
+<div class="purchase-btn">Purchase</div>
+</div>
+</div>
+</a>
+<a class="merch-item-link" href="https://odraedir.bandcamp.com/merch/odraedir-logo-t-shirt-2" target="_blank">
+<div class="merch-item">
+<div class="merch-content">
+<div class="image-container">
+<img alt="Černé tričko ODRAEDIR s logem Vengeance" class="merch-image" src="Pictures/vengeance%20logo%20tshirt.jpg"/>
+</div>
+<h3 class="merch-title">Vengeance Logo T-shirt</h3>
+<p class="merch-price">€20 EUR</p>
+</div>
+<div class="button-container">
+<div class="purchase-btn">Purchase</div>
+</div>
+</div>
+</a>
+<a class="merch-item-link" href="https://odraedir.bandcamp.com/album/vengeance-full-length-2023" target="_blank">
+<div class="merch-item">
+<div class="merch-content">
+<div class="image-container">
+<img alt="Fyzické CD ODRAEDIR - Vengeance" class="merch-image" src="Pictures/vengeance%20album.jpg"/>
+</div>
+<h3 class="merch-title">Vengeance CD</h3>
+<p class="merch-price">€15 EUR</p>
+</div>
+<div class="button-container">
+<div class="purchase-btn">Purchase</div>
+</div>
+</div>
+</a>
+<a class="merch-item-link" href="https://odraedir.bandcamp.com/album/legends-of-the-dark-times-full-length-2017" target="_blank">
+<div class="merch-item">
+<div class="merch-content">
+<div class="image-container">
+<img alt="Fyzické CD ODRAEDIR - Legends of the Dark Times" class="merch-image" src="Pictures/legends%20cd.jpg"/>
+</div>
+<h3 class="merch-title">Legends of the Dark Times CD</h3>
+<p class="merch-price">€10 EUR</p>
+</div>
+<div class="button-container">
+<div class="purchase-btn">Purchase</div>
+</div>
+</div>
+</a>
+<a class="merch-item-link" href="https://odraedir.bandcamp.com/merch/embroidered-patchwork" target="_blank">
+<div class="merch-item">
+<div class="merch-content">
+<div class="image-container">
+<img alt="Vyšívaný nášivka ODRAEDIR s logem kapely" class="merch-image" src="Pictures/Patchwork.jpg"/>
+</div>
+<h3 class="merch-title">Embroidered Patchwork</h3>
+<p class="merch-price">€5 EUR</p>
+</div>
+<div class="button-container">
+<div class="purchase-btn">Purchase</div>
+</div>
+</div>
+</a>
+<a class="merch-item-link" href="https://odraedir.bandcamp.com/merch/board-magnet" target="_blank">
+<div class="merch-item">
+<div class="merch-content">
+<div class="image-container">
+<img alt="Magnetka na lednici s logem ODRAEDIR" class="merch-image" src="Pictures/board magnet.webp"/>
+</div>
+<h3 class="merch-title">Board Magnet</h3>
+<p class="merch-price">€1 EUR</p>
+</div>
+<div class="button-container">
+<div class="purchase-btn">Purchase</div>
+</div>
+</div>
+</a>
+</div>
+</section>
+<section id="Shows">
+    <h2 class="section-title">Upcoming Shows</h2>
+    <div class="Shows-container">
+        <div class="Shows-date">
+            <div class="date">16.4.</div>
+            <div class="venue">
+                <div>Shadows of April - Praha</div>
+                <div class="city">Praha</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/924438957141413/" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">18.4.</div>
+            <div class="venue">
+                <div>Shadows of April - Brno</div>
+                <div class="city">Brno</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/1321236073383286/" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">25.4.</div>
+            <div class="venue">
+                <div>Death A.D. 2026</div>
+                <div class="city">Držkov</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/748608967787853/" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">2.5.</div>
+            <div class="venue">
+                <div>Dark Medieval Fest VI</div>
+                <div class="city">Lamure-sur-Azergues, France</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/1888867565030227/" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">30.5.</div>
+            <div class="venue">
+                <div>Rock Metal Camp</div>
+                <div class="city">Lac De Plaisance, France</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/1370748880789006" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">20.6.</div>
+            <div class="venue">
+                <div>Miki Rock Fest</div>
+                <div class="city">Horní Jiřetín</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/3283089305173259/3283089311839925/" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">3.-4.7.</div>
+            <div class="venue">
+                <div>South of Heaven Open Air</div>
+                <div class="city">Zbytiny</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/1621145885575926" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">7.-8.8.</div>
+            <div class="venue">
+                <div>Lughnasad</div>
+                <div class="city">Horákov</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/1332585121771730" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+        <div class="Shows-date">
+            <div class="date">12.9.</div>
+            <div class="venue">
+                <div>20 Jahre Heathen Foray</div>
+                <div class="city">Graz, Austria</div>
+            </div>
+            <a class="fb-event-btn" href="https://www.facebook.com/events/2134974287357379/" target="_blank" rel="noopener noreferrer">FB Event</a>
+        </div>
+    </div>
+</section>
+<section id="gallery">
+<h2 class="section-title">Gallery</h2>
+<div class="gallery">
+<div class="gallery-item">
+<img alt="Odraedir band 1" class="gallery-img" data-fullsrc="Pictures/Galerie 1.webp" loading="lazy" src="Pictures/minis/Galerie 1 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Odraedir band 2" class="gallery-img" data-fullsrc="Pictures/Galerie 2.webp" loading="lazy" src="Pictures/minis/Galerie 2 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Petr Matouš - Solo Guitar, Orchestras, Backing vocals" class="gallery-img" data-fullsrc="Pictures/Galerie 3.webp" loading="lazy" src="Pictures/minis/Galerie 3 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Luboš Růžička - Bass" class="gallery-img" data-fullsrc="Pictures/Galerie 4.webp" loading="lazy" src="Pictures/minis/Galerie 4 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Štěpán Novák - Rhytm Guitar" class="gallery-img" data-fullsrc="Pictures/Galerie 5.webp" loading="lazy" src="Pictures/minis/Galerie 5 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Jakub Držmíšek - Vocals" class="gallery-img" data-fullsrc="Pictures/Galerie 6.webp" loading="lazy" src="Pictures/minis/Galerie 6 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Samuel Žák - Drums" class="gallery-img" data-fullsrc="Pictures/Galerie 7.webp" loading="lazy" src="Pictures/minis/Galerie 7 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Odraedir live" class="gallery-img" data-fullsrc="Pictures/0ac0411ab3da85e8e33322877a23084d.jpg" loading="lazy" src="Pictures/minis/0ac0411ab3da85e8e33322877a23084d mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Luboš & Štěpán" class="gallery-img" data-fullsrc="Pictures/6c356dd281b98a6c02e058843022b43a.jpg" loading="lazy" src="Pictures/minis/6c356dd281b98a6c02e058843022b43a mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Luboš" class="gallery-img" data-fullsrc="Pictures/142a60a096a5190689c7b7c4fe1044e0.jpg" loading="lazy" src="Pictures/minis/142a60a096a5190689c7b7c4fe1044e0 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Samuel" class="gallery-img" data-fullsrc="Pictures/8849673d3bd54fd5cd7b2bd5be5479d8.jpg" loading="lazy" src="Pictures/minis/8849673d3bd54fd5cd7b2bd5be5479d8 mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Bandphoto with crowd" class="gallery-img" data-fullsrc="Pictures/Crowd.jpg" loading="lazy" src="Pictures/minis/Crowd mini.webp"/>
+</div>
+<div class="gallery-item">
+<img alt="Luboš & Štěpán" class="gallery-img" data-fullsrc="Pictures/b76cb7cdba41f8e99da9b6c31b80c0c3.jpg" loading="lazy" src="Pictures/minis/b76cb7cdba41f8e99da9b6c31b80c0c3 mini.webp"/>
+</div>
+</div>
+</section>
+<div class="lightbox" id="lightbox">
+<span class="close-lightbox">×</span>
+<div class="lightbox-content">
+<div id="lightbox-caption"></div> <img alt="" id="lightbox-img"/> </div>
+<div aria-label="Previous image" class="lightbox-arrow prev-arrow" role="button">❮</div>
+<div aria-label="Next image" class="lightbox-arrow next-arrow" role="button">❯</div>
+</div>
+<section id="Biography">
+<h2 class="section-title">Biography</h2>
+<div class="Biography-container">
+<img alt="Fotografie kapely ODRAEDIR" class="Biography-image" src="Pictures/contact.webp"/>
+<div class="Biography-text">
+<p>Odraedir is a Prague-based pagan metal band formed in the fall of 2009. Although it operates with a traditional setup of 2 guitars, bass, drums, and vocals, the music is spiced up with various folk instruments such as violins, bagpipes, and flutes.</p>
+<p>Odraedir is known for their presence on the scene across the entire country. In October 2023, the band released their second full-length album titled "Vengeance," and during 2024, they presented songs from the new album at club events and festivals in the Czech Republic and abroad. The album emphasizes quality production, which highlights the composition and arrangement of each song, and also captivates with a powerful combination of epic choruses and melodic death metal riffs enriched with some unconventional elements of pagan metal. The stories then draw listeners into Norse mythology, and some of them are brought closer to the audience through lyrics videos. This year, Odraedir released two new videos to songs from the upcoming EP Abyss. The songs Cult and Sip of Courage are a reminiscence of former music and particularly, Cult is the very first song composed in the workshop of Odraedir, now presented in a novel and more powerful robe.</p>
+<div class="members">
+<div class="member">
+<span class="member-name">Jakub Držmíšek</span> -
+                        <span class="member-instrument">Lead vocals, lyrics </span>
+</div>
+<div class="member">
+<span class="member-name">Petr Matouš</span> -
+                        <span class="member-instrument">Solo guitar, orchestras, backing vocals, music composer</span>
+</div>
+<div class="member">
+<span class="member-name">Štěpán Novák</span> -
+                        <span class="member-instrument">Rhytm guitar</span>
+</div>
+<div class="member">
+<span class="member-name">Luboš Růžička</span> -
+                        <span class="member-instrument">Bass</span>
+</div>
+<div class="member">
+<span class="member-name">Samuel Žák</span> -
+                        <span class="member-instrument">Drums</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="downloads" id="Downloads">
+<h2 class="section-title">Downloads</h2>
+<div class="downloads-container">
+<a class="download-item-link" download="Odraedir_Logo_Abyss.png" href="Pictures/odraedir-logo.png" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Odraedir Logo Abyss</h3>
+<p class="download-description">Official Odraedir logo from the Abyss album</p>
+<div class="thumbnail-container">
+<img alt="Náhled loga ODRAEDIR z alba Abyss ke stažení" class="download-thumbnail" src="Pictures/minis/odraedir-logo.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_Logo_Vengeance.png" href="Pictures/Odraedir_logo_FINAL.png" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Odraedir Logo Vengeance</h3>
+<p class="download-description">Official Odraedir logo from the Vengeance album</p>
+<div class="thumbnail-container">
+<img alt="Náhled loga ODRAEDIR z alba Vengeance ke stažení" class="download-thumbnail" src="Pictures/minis/Odraedir_logo_FINAL.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_Front_Abyss.png" href="Pictures/front%20final%20final.png" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Odraedir Front Abyss</h3>
+<p class="download-description">Album artwork for Abyss</p>
+<div class="thumbnail-container">
+<img alt="Náhled obalu alba ODRAEDIR - Abyss ke stažení" class="download-thumbnail" src="Pictures/minis/front%20final%20final.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir - Vengeance Front.jpg" href="Pictures/Odraedir - Vengeance Front.jpg" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Odraedir Front Vengeance</h3>
+<p class="download-description">Album artwork for Vengeance</p>
+<div class="thumbnail-container">
+<img alt="Náhled obalu alba ODRAEDIR - Vengeance ke stažení" class="download-thumbnail" src="Pictures/minis/Vengeance%20front.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_Mobile_Wallpaper.png" href="Pictures/Wall%20Phone%202.png" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Mobile Wallpaper</h3>
+<p class="download-description">Odraedir wallpaper optimized for mobile devices</p>
+<div class="thumbnail-container">
+<img alt="Náhled tapety na mobil s motivem ODRAEDIR ke stažení" class="download-thumbnail mobile-thumbnail" src="Pictures/minis/Wall%20Phone%202.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_PC_Wallpaper_1.png" href="Pictures/Wallpaper%201.png" target="_blank">
+<div class="download-item">
+<h3 class="download-title">PC Wallpaper 1</h3>
+<p class="download-description">Odraedir desktop wallpaper - design 1</p>
+<div class="thumbnail-container">
+<img alt="Náhled tapety na plochu PC s motivem ODRAEDIR - design 1 ke stažení" class="download-thumbnail" src="Pictures/minis/Wallpaper%201.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_PC_Wallpaper_2.png" href="Pictures/Wallpaper%202.png" target="_blank">
+<div class="download-item">
+<h3 class="download-title">PC Wallpaper 2</h3>
+<p class="download-description">Odraedir desktop wallpaper - design 2</p>
+<div class="thumbnail-container">
+<img alt="Náhled tapety na plochu PC s motivem ODRAEDIR - design 2 ke stažení" class="download-thumbnail" src="Pictures/minis/Wallpaper%202.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_PC_Wallpaper_3.png" href="Pictures/Wallpaper%203.png" target="_blank">
+<div class="download-item">
+<h3 class="download-title">PC Wallpaper 3</h3>
+<p class="download-description">Odraedir desktop wallpaper - design 3</p>
+<div class="thumbnail-container">
+<img alt="Náhled tapety na plochu PC s motivem ODRAEDIR - design 3 ke stažení" class="download-thumbnail" src="Pictures/minis/Wallpaper%203.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir EPK.rar" href="Pictures/Odraedir EPK.rar" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Odraedir EPK</h3>
+<p class="download-description">Odraedir EPK (Electronic Press Kit) </p>
+<div class="thumbnail-container">
+<img alt="Náhled EPK kapely ODRAEDIR ke stažení" class="download-thumbnail" src="Pictures/minis/EPK mini.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_technical_rider_(EN).pdf" href="Pictures/Odraedir_technical%20rider%20(EN).pdf" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Technical Rider (EN)</h3>
+<p class="download-description">Official Odraedir technical rider in English</p>
+<div class="thumbnail-container">
+<img alt="Náhled EPK kapely ODRAEDIR ke stažení" class="download-thumbnail" src="Pictures/minis/EPK mini.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+<a class="download-item-link" download="Odraedir_technický_rider_(CZ).pdf" href="Pictures/Odraedir_technický%20rider%20(CZ).pdf" target="_blank">
+<div class="download-item">
+<h3 class="download-title">Technický Rider (CZ)</h3>
+<p class="download-description">Oficiální technický rider kapely Odraedir v češtině</p>
+<div class="thumbnail-container">
+<img alt="Náhled EPK kapely ODRAEDIR ke stažení" class="download-thumbnail" src="Pictures/minis/EPK mini.webp"/>
+</div>
+<div class="download-btn">Download</div>
+</div>
+</a>
+</div>
+</section>
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="contact-container">
+<div class="contact-info">
+<p>You can contact band directly via official e-mail adress:</p>
+<p>Email: <a class="email-link" href="mailto:odraedir@gmail.com">odraedir@gmail.com</a></p>
+<p>Phone: (420) 702094673</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-icon" href="https://www.facebook.com/odraedir" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/odraedirofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a aria-label="YouTube" class="social-icon" href="https://www.youtube.com/@odraedir" target="_blank"><i class="fab fa-youtube"></i></a>
+<a aria-label="Spotify" class="social-icon" href="https://open.spotify.com/artist/5XY2vRKKwuolqtIDSvU3FU" target="_blank"><i class="fab fa-spotify"></i></a>
+<a aria-label="Bandcamp" class="social-icon" href="https://odraedir.bandcamp.com/music" target="_blank"><i class="fab fa-bandcamp"></i></a>
+</div>
+</div>
+<img alt="Vtipný obrázek s kontaktními informacemi pro ODRAEDIR" class="contact-image" src="Pictures/Kontakt%20vtípek.webp"/>
+
+<div class="legal-info">
+<h3>Legal Information</h3>
+<p><strong>Odraedir, z.s.</strong> is a registered association listed in the Commercial Register under ID No. <strong>23566141</strong>, established on <strong>August 21, 2025</strong>.</p>
+<p><strong>Scope of Activities:</strong></p>
+<ul>
+<li>Performing in the Czech Republic and abroad</li>
+<li>Promoting alternative music culture and Norse mythology</li>
+<li>Collaborating with domestic and international music groups and partners</li>
+<li>Organizing cultural and music events, including accompanying programs (e.g. lectures, workshops, thematic activities)</li>
+<li>Selling music media and promotional items (merchandise)</li>
+<li>Buying and selling themed music or historically inspired products (e.g. pendants, posters)</li>
+<li>Advertising and sponsorship activities, provided they align with the association’s primary mission</li>
+</ul>
+<p><strong>Statutory Representative – Chairman:</strong><br/>
+  Petr Matouš<br/>
+  Běchorská 2222/10, Horní Počernice<br/>
+  193 00 Prague 9, Czech Republic</p>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-logo-container">
+<img alt="Dekorativní obrázek vlevo" class="footer-decoration-left" src="Pictures/Footer_obrázek-removebg.png"/>
+<div class="footer-logo">ODRAEDIR</div>
+<img alt="Dekorativní obrázek vpravo" class="footer-decoration-right" src="Pictures/Footer_obrázek-removebg.png"/>
+</div>
+<ul class="footer-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#Discography">Discography</a></li>
+<li><a href="#music">Music</a></li>
+<li><a href="#merchandise">Merchandise</a></li>
+<li><a href="#Shows">Shows</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#Biography">Biography</a></li>
+<li><a href="#Downloads">Downloads</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<p class="copyright">© 2025 ODRAEDIR. All Rights Reserved.</p>
+</footer>
+<div aria-label="Back to top" class="back-to-top" role="button">
+<i class="fas fa-arrow-up"></i>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Deklarace nav proměnné pouze jednou na začátku
+    const nav = document.querySelector('nav');
+    let lastScrollY = window.scrollY; // Pro scroll efekt na mobilu
+
+    // NEW JAVASCRIPT FOR HIDING/SHOWING NAV ON SCROLL FOR MOBILE
+    window.addEventListener('scroll', () => {
+        const isMobileView = window.innerWidth <= 999; 
+
+        if (isMobileView) {
+            nav.classList.remove('scrolled'); // Odebere třídu 'scrolled'
+
+            // Dynamický práh pro skrytí navigace
+            // Používá výšku nav.offsetHeight + 20px, s minimem 80px, pro případ, že by se nav.offsetHeight na mobilu stala příliš malou
+            const hideThreshold = nav.offsetHeight > 0 ? (nav.offsetHeight + 20) : 80;
+            
+            // Podmínka pro SKRYTÍ navigace: Skroluje se dolů A je přes práh
+            if (window.scrollY > lastScrollY && window.scrollY > hideThreshold) {
+                if (!nav.classList.contains('nav-hidden')) { // Přidat třídu jen pokud už tam není
+                    nav.classList.add('nav-hidden');
+                }
+            } 
+            // Podmínka pro ZOBRAZENÍ navigace: Skroluje se nahoru NEBO je velmi blízko začátku stránky (do 20px odshora)
+            else if (window.scrollY < lastScrollY || window.scrollY <= 20) { 
+                if (nav.classList.contains('nav-hidden')) { // Odebrat třídu jen pokud tam je
+                    nav.classList.remove('nav-hidden');
+                }
+            }
+        } else {
+            // Desktop logika: Navigace je vždy viditelná
+            nav.classList.remove('nav-hidden');
+        }
+        lastScrollY = window.scrollY; 
+    });
+
+    // Zajistit viditelnost navigace při změně velikosti okna, pokud šířka je větší než 995px
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 995) {
+            nav.classList.remove('nav-hidden');
+        }
+    });
+
+    // Logo back to top functionality
+    const logoTop = document.getElementById('logo-top');
+    if (logoTop) {
+        logoTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.color = '';
+            this.style.textShadow = '';
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Mobile navigation (burger menu)
+    const burger = document.querySelector('.burger');
+    const mobileNavLinksContainer = document.querySelector('.nav-links'); // Lepší název pro odlišení od hlavní nav
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    burger.addEventListener('click', function() {
+        // Toggle navigation
+        mobileNavLinksContainer.classList.toggle('nav-active');
+
+        // Animate links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        // Burger animation
+        burger.classList.toggle('toggle');
+    });
+
+	// === ČISTÉ ŘEŠENÍ BEZ JS PRO ROLOVÁNÍ ===
+    // Zde pouze obsluhujeme zavření menu na mobilu
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // POZOR: Žádné preventDefault()! Necháme to na CSS.
+            
+            const mobileNavLinksContainer = document.querySelector('.nav-links');
+            const burger = document.querySelector('.burger');
+            
+            // Zavření menu na mobilu
+            if (mobileNavLinksContainer && mobileNavLinksContainer.classList.contains('nav-active')) {
+                mobileNavLinksContainer.classList.remove('nav-active');
+                if (burger) burger.classList.remove('toggle');
+                document.querySelectorAll('.nav-links li').forEach(link => {
+                    link.style.animation = '';
+                });
+            }
+        });
+    });
+
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) { // Show button after scrolling down 300px
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // LIGHTBOX FUNCTIONALITY - With navigation arrows
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeLightbox = document.querySelector('.close-lightbox');
+
+    // Create and append navigation arrows
+    const prevArrow = document.createElement('div');
+    prevArrow.className = 'lightbox-arrow prev-arrow';
+    prevArrow.innerHTML = '❮'; // Left arrow character
+    lightbox.appendChild(prevArrow);
+
+    const nextArrow = document.createElement('div');
+    nextArrow.className = 'lightbox-arrow next-arrow';
+    nextArrow.innerHTML = '❯'; // Right arrow character
+    lightbox.appendChild(nextArrow);
+
+    let currentIndex = 0;
+
+    // Function to show image at specified index
+    function showImage(index) {
+        currentIndex = index;
+        lightboxImg.src = galleryImages[index].dataset.fullsrc;
+        lightboxCaption.innerHTML = galleryImages[index].alt || 'Gallery Image';
+    }
+
+    // Add click event to all gallery images
+    galleryImages.forEach(function(image, index) {
+        image.addEventListener('click', function() {
+            lightbox.style.display = 'flex';
+            showImage(index);
+        });
+    });
+
+    // Previous image function
+    function showPrevImage() {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage(currentIndex);
+    }
+
+    // Next image function
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        showImage(currentIndex);
+    }
+
+    // Navigation with mouse clicks
+    prevArrow.addEventListener('click', showPrevImage);
+    nextArrow.addEventListener('click', showNextImage);
+
+    // Close lightbox when clicking the × button
+    closeLightbox.addEventListener('click', function() {
+        lightbox.style.display = 'none';
+    });
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (lightbox.style.display === 'block') { // Změněno z 'flex' na 'block' pro konzistenci s nastavením 'display = none'
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        }
+    });
+
+    // NEW JAVASCRIPT FOR EQUALIZING MERCHANDISE ITEM HEIGHTS
+    function equalizeMerchHeights() {
+        const merchItems = document.querySelectorAll('.merch-item');
+        if (merchItems.length === 0) return; // Stop if no merch items found
+
+        // Reset heights to auto to get natural height
+        merchItems.forEach(item => {
+            item.style.height = 'auto';
+        });
+
+        // Find the maximum height among all items
+        let maxHeight = 0;
+        merchItems.forEach(item => {
+            if (item.offsetHeight > maxHeight) {
+                maxHeight = item.offsetHeight;
+            }
+        });
+
+        // Set all items to the maximum height
+        merchItems.forEach(item => {
+            item.style.height = `${maxHeight}px`;
+        });
+    }
+
+    // Run the height equalization on page load and window resize
+    window.addEventListener('load', equalizeMerchHeights);
+    window.addEventListener('resize', equalizeMerchHeights);
+
+    // Add back to top functionality to the footer logo
+    const footerLogoContainer = document.querySelector('.footer-logo-container'); // Získání kontejneru pro logo a obrázky
+    if (footerLogoContainer) {
+        footerLogoContainer.style.cursor = 'pointer'; // Změní kurzor myši, aby naznačoval klikatelnost
+        footerLogoContainer.addEventListener('click', function(e) {
+            e.preventDefault(); // Zabrání výchozí akci, pokud by prvek byl například odkaz (není, ale je to dobrá praxe)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Plynulé scrollování
+            });
+        });
+    }
+	
+	// Kód pro dynamické načtení videa
+    function loadVideoForDesktop() {
+        const videoElement = document.querySelector('.video-background');
+        // Zkontrolujeme, zda má video už svůj zdroj (abychom ho nenačítali vícekrát)
+        const isSourceLoaded = videoElement.querySelector('source');
+
+        if (window.innerWidth > 999 && !isSourceLoaded) {
+            const videoSrc = videoElement.getAttribute('data-src');
+            if (videoSrc) {
+                const source = document.createElement('source');
+                source.setAttribute('src', videoSrc);
+                source.setAttribute('type', 'video/mp4');
+                videoElement.appendChild(source);
+                videoElement.load(); // Načte a spustí video
+            }
+        }
+    }
+
+    // Zavoláme funkci při načtení stránky
+    loadVideoForDesktop();
+
+    // A také při změně velikosti okna (např. při otočení tabletu)
+    window.addEventListener('resize', loadVideoForDesktop);
+
+}); // Toto uzavírá hlavní DOMContentLoaded listener
+</script>
+</body>
+</html>
