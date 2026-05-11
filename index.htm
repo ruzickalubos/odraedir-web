@@ -19,6 +19,72 @@
     <link rel="preload" as="image" href="Pictures/bcg_poster.jpg">
     
     <style>
+	/* ============ COOKIE BANNER ============ */
+        .cookie-banner {
+            position: fixed;
+            bottom: -100%; /* Skryto mimo obrazovku */
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            border-top: 2px solid var(--accent-color);
+            color: var(--text-color);
+            padding: 20px 5%;
+            z-index: 9999;
+            transition: bottom 0.5s ease-in-out;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+        }
+
+        .cookie-banner.show {
+            bottom: 0;
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .cookie-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .cookie-btn:hover {
+            background-color: #f00;
+            box-shadow: 0 0 15px var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+		
         /* ============ HLAVNÍ OPRAVA ROLOVÁNÍ (CSS) ============ */
         html {
             scroll-behavior: smooth;
@@ -2394,7 +2460,7 @@
 <div class="download-btn">Download</div>
 </div>
 </a>
-<a class="download-item-link" download="Odraedir EPK.rar" href="Pictures/Odraedir EPK.rar" target="_blank">
+<a class="download-item-link" download="Odraedir EPK.zip" href="Pictures/Odraedir EPK.zip" target="_blank">
 <div class="download-item">
 <h3 class="download-title">Odraedir EPK</h3>
 <p class="download-description">Odraedir EPK (Electronic Press Kit) </p>
@@ -2484,6 +2550,14 @@
 </footer>
 <div aria-label="Back to top" class="back-to-top" role="button">
 <i class="fas fa-arrow-up"></i>
+</div>
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+        <p>This website uses cookies (including third-party cookies from YouTube and Spotify) to ensure the proper display of multimedia content. By clicking the 'Accept and continue' button, you consent to their use.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="cookie-btn">Accept and continue</button>
+        </div>
+    </div>
 </div>
 <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -2717,6 +2791,28 @@
                 top: 0,
                 behavior: 'smooth' // Plynulé scrollování
             });
+        });
+    }
+	
+	// === COOKIE BANNER LOGIKA ===
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+    // Zkontrolujeme, zda už uživatel souhlasil (informace je uložená v prohlížeči)
+    if (!localStorage.getItem('cookieConsentGiven')) {
+        // Pokud nesouhlasil, po krátkém zpoždění (např. 1 sekunda) lištu zobrazíme
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
+
+    // Kliknutí na tlačítko "Přijmout"
+    if (acceptCookiesBtn) {
+        acceptCookiesBtn.addEventListener('click', function() {
+            // Uložíme do prohlížeče, že souhlasil
+            localStorage.setItem('cookieConsentGiven', 'true');
+            // Schováme lištu
+            cookieBanner.classList.remove('show');
         });
     }
 	
